@@ -1,0 +1,32 @@
+.root {
+  width: 500px;
+  margin: 0 auto;
+  border: 1px solid green;
+}
+
+.title {
+  color: red;
+  text-align: center;
+}
+
+.logo {
+  padding: 15%;
+  width: 350px;
+}
+
+.btn {
+  display: block;
+  margin: auto;
+  padding: 5%;
+  border: none;
+  background: none;
+  font-size: 125%;
+  color: cornflowerblue;
+  cursor: pointer;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: dodgerblue;
+  color: white;
+}

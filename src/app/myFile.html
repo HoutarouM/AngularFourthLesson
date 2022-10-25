@@ -1,0 +1,8 @@
+<div [class.root] = "active" [style.background-color]="color">
+  <h1 [class.title] = "active">{{ title.toUpperCase() }}</h1>
+
+    <img [src] = "logo" [class.logo] = "active">
+
+    <button (click)="changeBackground()" type="button" [class.btn] = "active">Zmien color tla</button>
+    <input type="text" [(ngModel)] = "title">
+</div>
