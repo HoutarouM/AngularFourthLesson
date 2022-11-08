@@ -1,8 +1,32 @@
-<div [class.root] = "active" [style.background-color]="color">
-  <h1 [class.title] = "active">{{ title.toUpperCase() }}</h1>
+<div [class.root]="active" [style.background-color]="color">
+  <h1 [class.title]="active">{{ firma.title.toUpperCase() }}</h1>
 
-    <img [src] = "logo" [class.logo] = "active">
+  <ng-container [ngSwitch]="firma.type">
+    <img src="/assets/images/finansy.jpg" *ngSwitchCase=1>
+    <img src="/assets/images/it.jpg" style="width: 500px" *ngSwitchDefault>
+  </ng-container>
 
-    <button (click)="changeBackground()" type="button" [class.btn] = "active">Zmien color tla</button>
-    <input type="text" [(ngModel)] = "title">
+  <div class="border">
+    <img [src]="firma.logo" [class.logo]="active" *ngIf="showImage else noImage">
+    <label>
+      <input type="checkbox" [(ngModel)]="showImage"> Pokaz zdjecie
+    </label>
+  </div>
+
+  <p>Kontakt: </p>
+  <table>
+    <tr *ngFor="let value of firma.adres">
+      <td>{{ value }}</td>
+    </tr>
+  </table>
+
+  <button (click)="changeBackground()" type="button" [class.btn]="active">Zmien color tla</button>
+
+  <input type="text" [(ngModel)]="firma.title">
+
+
+  <ng-template #noImage>
+    <img src="{{firma.noLogo}}" class="image">
+    <p class="text_center">Brak zdjecia</p>
+  </ng-template>
 </div>

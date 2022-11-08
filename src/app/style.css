@@ -30,3 +30,22 @@
   background-color: dodgerblue;
   color: white;
 }
+
+p.text_center {
+  text-align: center;
+}
+
+.image {
+  margin: 0 auto;
+  display: block;
+}
+
+table,
+td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+.border {
+  border: 2px solid black;
+}
